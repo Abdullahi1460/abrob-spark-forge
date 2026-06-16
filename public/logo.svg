@@ -1,0 +1,70 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light blue triangle (left) -->
+  <polygon points="150,400 200,200 300,350" fill="#00D4FF" opacity="0.8"/>
+  
+  <!-- Light blue lines -->
+  <line x1="180" y1="250" x2="240" y2="200" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <line x1="195" y1="310" x2="255" y2="260" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <line x1="160" y1="330" x2="220" y2="280" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- Circles on lines -->
+  <circle cx="180" cy="250" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"/>
+  <circle cx="240" cy="200" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"/>
+  <circle cx="195" cy="310" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"/>
+  <circle cx="220" cy="280" r="12" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.9"/>
+  
+  <!-- Dark blue rounded shape (right) with gears -->
+  <path d="M 300 120 Q 380 140 380 240 Q 380 340 300 360 Q 220 340 220 240 Q 220 140 300 120" fill="#001B47"/>
+  
+  <!-- Gears on dark blue -->
+  <!-- Gear 1 (top) -->
+  <g transform="translate(300, 200)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8"/>
+    <!-- Gear teeth -->
+    <g stroke="#FFFFFF" stroke-width="4" opacity="0.8">
+      <line x1="0" y1="-45" x2="0" y2="-55"/>
+      <line x1="32" y1="-32" x2="38" y2="-40"/>
+      <line x1="45" y1="0" x2="55" y2="0"/>
+      <line x1="32" y1="32" x2="38" y2="40"/>
+      <line x1="0" y1="45" x2="0" y2="55"/>
+      <line x1="-32" y1="32" x2="-38" y2="40"/>
+      <line x1="-45" y1="0" x2="-55" y2="0"/>
+      <line x1="-32" y1="-32" x2="-38" y2="-40"/>
+    </g>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- Gear 2 (middle) -->
+  <g transform="translate(330, 260)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8"/>
+    <!-- Gear teeth -->
+    <g stroke="#FFFFFF" stroke-width="4" opacity="0.8">
+      <line x1="0" y1="-50" x2="0" y2="-62"/>
+      <line x1="35" y1="-35" x2="44" y2="-44"/>
+      <line x1="50" y1="0" x2="62" y2="0"/>
+      <line x1="35" y1="35" x2="44" y2="44"/>
+      <line x1="0" y1="50" x2="0" y2="62"/>
+      <line x1="-35" y1="35" x2="-44" y2="44"/>
+      <line x1="-50" y1="0" x2="-62" y2="0"/>
+      <line x1="-35" y1="-35" x2="-44" y2="-44"/>
+    </g>
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- Gear 3 (bottom) -->
+  <g transform="translate(300, 310)">
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8"/>
+    <!-- Gear teeth -->
+    <g stroke="#FFFFFF" stroke-width="4" opacity="0.8">
+      <line x1="0" y1="-40" x2="0" y2="-50"/>
+      <line x1="28" y1="-28" x2="35" y2="-35"/>
+      <line x1="40" y1="0" x2="50" y2="0"/>
+      <line x1="28" y1="28" x2="35" y2="35"/>
+      <line x1="0" y1="40" x2="0" y2="50"/>
+      <line x1="-28" y1="28" x2="-35" y2="35"/>
+      <line x1="-40" y1="0" x2="-50" y2="0"/>
+      <line x1="-28" y1="-28" x2="-35" y2="-35"/>
+    </g>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>
+  </g>
+</svg>
