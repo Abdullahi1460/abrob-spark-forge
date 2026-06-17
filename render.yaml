@@ -11,12 +11,14 @@ services:
         value: "https://<YOUR_FRONTEND_URL>"
       - key: VITE_CONTACT_ENDPOINT
         value: "https://<YOUR_BACKEND_URL>/api/contact"
+
   - type: web
     name: abrob-backend
     env: node
-    rootDirectory: "."
+    rootDirectory: "backend"
+    workingDirectory: "backend"
     buildCommand: "npm install"
-    startCommand: "node backend/server.js"
+    startCommand: "node server.js"
     repo: https://github.com/Abdullahi1460/abrob-spark-forge.git
     branch: main
     envVars:
