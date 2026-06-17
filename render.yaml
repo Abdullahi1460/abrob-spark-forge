@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: abrob-frontend
+    env: node
+    buildCommand: "npm install && npm run build"
+    startCommand: "npx serve -s dist" # serve built Vite output
+    repo: https://github.com/Abdullahi1460/abrob-spark-forge.git
+    branch: main
+    envVars:
+      - key: VITE_API_URL
+        value: "https://<YOUR_FRONTEND_URL>"
+      - key: VITE_CONTACT_ENDPOINT
+        value: "https://<YOUR_BACKEND_URL>/api/contact"
+  - type: web
+    name: abrob-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node backend/server.js"
+    repo: https://github.com/Abdullahi1460/abrob-spark-forge.git
+    branch: main
+    envVars:
+      - key: FRONTEND_URL
+        value: "https://<YOUR_FRONTEND_URL>"
