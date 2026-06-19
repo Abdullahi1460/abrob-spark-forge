@@ -110,18 +110,22 @@ const Solutions = () => {
 
         <div className="container mx-auto px-4 z-10 relative">
           {/* 1. Hero Section (GTpay Countdown) */}
-          <section className="mb-24 animate-fade-in text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm text-primary mb-4 font-medium mx-auto">
+          <section className="mb-20 animate-fade-in text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm px-4 py-1.5 text-xs sm:text-sm text-primary mb-6 font-semibold mx-auto hover:border-primary/50 transition-colors">
               <Zap className="w-4 h-4 animate-pulse" /> Launching July 28, 2026
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-none font-poppins mb-12">
-              ABROBpay: Track your Asset <br className="hidden md:block" />
-              <span className="gradient-primary bg-clip-text text-transparent">Online or Offline</span>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight font-poppins mb-8 max-w-5xl mx-auto">
+              <span className="block text-primary text-3xl sm:text-5xl md:text-6xl mb-4 font-bold tracking-normal">ABROBpay</span>
+              <span className="block">
+                Track your Asset <span className="bg-gradient-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">Online or Offline</span>
+              </span>
             </h1>
 
-            <p class="text-center text-lg text-primary mb-4 animate-pulse">🎉 First 10 sign‑ups get <strong>10% off</strong> ABROBpay! Use code <code>ABROB10</code>.</p>
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto text-left">
+            <p className="text-center text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              🎉 First 10 sign‑ups get <strong className="text-primary">10% off</strong> ABROBpay! Use code <code className="bg-primary/15 text-primary px-2 py-0.5 rounded font-mono text-sm border border-primary/30">ABROB10</code>.
+            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto text-left">
               {/* Left Column: Product Image */}
               <div className="lg:col-span-5 flex justify-end lg:order-2 self-start items-start">
                 <div className="relative group rounded-2xl overflow-hidden border border-border shadow-glow bg-card w-full max-w-sm">
@@ -193,6 +197,17 @@ const Solutions = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
+                            className="bg-muted border-border"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="waitlist-phone">Phone Number (Optional)</Label>
+                          <Input
+                            id="waitlist-phone"
+                            type="tel"
+                            placeholder="+234..."
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
                             className="bg-muted border-border"
                           />
                         </div>

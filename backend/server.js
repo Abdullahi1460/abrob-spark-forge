@@ -12,7 +12,8 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    // Allow all origins in development, restrict in production
+    origin: process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL : "*",
     methods: ["GET", "POST"],
     credentials: true,
   })

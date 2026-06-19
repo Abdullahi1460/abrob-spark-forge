@@ -121,7 +121,13 @@ const Projects = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             We love tackling challenging problems. Let's collaborate on your next innovation.
           </p>
-          <Button size="lg" className="gradient-primary">Start a Conversation</Button>
+          <a
+            href="https://wa.me/2347070879257?text=Hello%20ABROB%20INDUSTRY!%20I%20have%20a%20project%20in%20mind%20and%20would%20like%20to%20discuss%20collaboration%20with%20you."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="gradient-primary">Start a Conversation</Button>
+          </a>
         </section>
       </div>
     </div>

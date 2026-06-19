@@ -1,6 +1,63 @@
+import { useState, useRef } from "react";
 import BlogCard from "@/components/BlogCard";
+import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+
+type SubscribeStatus = 'idle' | 'loading' | 'success' | 'duplicate' | 'error';
 
 const Blog = () => {
+  const [status, setStatus] = useState<SubscribeStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const emailInput = form.elements.namedItem('email') as HTMLInputElement;
+    const email = emailInput.value.trim();
+
+    if (!email) {
+      setStatus('error');
+      setErrorMessage('Please enter your email address.');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setStatus('error');
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const { error } = await supabase
+        .from('newsletter_subscribers')
+        .insert({ email, source: 'blog_newsletter' });
+
+      if (error) {
+        if (error.code === '23505') {
+          setStatus('duplicate');
+        } else {
+          console.error('Supabase error:', error);
+          setStatus('error');
+          setErrorMessage('Something went wrong. Please try again later.');
+        }
+        return;
+      }
+
+      setStatus('success');
+      formRef.current?.reset();
+    } catch (err) {
+      console.error('Unexpected error:', err);
+      setStatus('error');
+      setErrorMessage('Something went wrong. Please try again later.');
+    }
+  };
   const posts = [
     {
       title: "How IoT is Shaping Africa's Future",
@@ -129,16 +186,48 @@ const Blog = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter for the latest articles, project updates, and tech insights.
           </p>
-          <div className="max-w-md mx-auto flex gap-2">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
-              className="flex-1 px-4 py-3 rounded-md bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button className="px-6 py-3 rounded-md gradient-primary hover:opacity-90 transition-opacity font-medium">
-              Subscribe
-            </button>
-          </div>
+          <form ref={formRef} onSubmit={handleSubscribe} noValidate className="max-w-md mx-auto">
+            <div className="flex gap-2">
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Your email address" 
+                disabled={status === 'loading'}
+                className="flex-1 px-4 py-3 rounded-md bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
+              />
+              <button 
+                type="submit"
+                disabled={status === 'loading'}
+                className="px-6 py-3 rounded-md gradient-primary hover:opacity-90 transition-opacity font-medium flex items-center justify-center min-w-[100px] disabled:opacity-50"
+              >
+                {status === 'loading' ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  'Subscribe'
+                )}
+              </button>
+            </div>
+
+            {/* Feedback messages */}
+            {status === 'success' && (
+              <p className="mt-4 flex items-center justify-center gap-1.5 text-sm text-green-400">
+                <CheckCircle2 className="h-4 w-4" />
+                You're subscribed! Thank you.
+              </p>
+            )}
+            {status === 'duplicate' && (
+              <p className="mt-4 flex items-center justify-center gap-1.5 text-sm text-yellow-400">
+                <CheckCircle2 className="h-4 w-4" />
+                You're already subscribed!
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="mt-4 flex items-center justify-center gap-1.5 text-sm text-red-400">
+                <AlertCircle className="h-4 w-4" />
+                {errorMessage}
+              </p>
+            )}
+          </form>
         </section>
       </div>
     </div>
