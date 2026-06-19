@@ -122,15 +122,15 @@ All colors MUST be HSL.
 
 @layer utilities {
   .gradient-primary {
-    background: var(--gradient-primary);
+    background-image: var(--gradient-primary);
   }
   
   .gradient-secondary {
-    background: var(--gradient-secondary);
+    background-image: var(--gradient-secondary);
   }
   
   .gradient-hero {
-    background: var(--gradient-hero);
+    background-image: var(--gradient-hero);
   }
   
   .shadow-card {
