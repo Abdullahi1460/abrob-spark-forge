@@ -13,7 +13,7 @@ const SEO = ({ title, description }: SEOProps) => (
     {/* Open Graph defaults */}
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
-      <meta name="keywords" content="ABROB-GTpay, GPS tracking, offline SMS, Firebase monitoring" />
+      <meta name="keywords" content="ABROBpay, GPS tracking, offline SMS, Firebase monitoring" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={window.location.href} />
   </Helmet>
