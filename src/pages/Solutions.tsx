@@ -101,7 +101,7 @@ const Solutions = () => {
     <>
       <SEO
         title="Solutions | ABROB INDUSTRY"
-        description="Explore GTpay, our cutting-edge dual-mode GPS tracking system. Protect vehicles and devices with offline SMS capability and real-time Firebase monitoring."
+        description="Explore ABROB-GTpay, our cutting-edge dual-mode GPS tracking system. Protect vehicles and devices with offline SMS capability and real-time Firebase monitoring."
       />
       <main className="min-h-screen py-20 relative overflow-hidden">
         {/* Background Ambient Glows */}
@@ -116,14 +116,14 @@ const Solutions = () => {
             </div>
             
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight font-poppins mb-8 max-w-5xl mx-auto">
-              <span className="block text-primary text-3xl sm:text-5xl md:text-6xl mb-4 font-bold tracking-normal">ABROBpay</span>
+              <span className="block text-primary text-3xl sm:text-5xl md:text-6xl mb-4 font-bold tracking-normal">ABROB-GTpay</span>
               <span className="block">
                 Track your Asset <span className="bg-gradient-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">Online or Offline</span>
               </span>
             </h1>
 
             <p className="text-center text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              🎉 First 10 sign‑ups get <strong className="text-primary">10% off</strong> ABROBpay! Use code <code className="bg-primary/15 text-primary px-2 py-0.5 rounded font-mono text-sm border border-primary/30">ABROB10</code>.
+              🎉 First 10 sign‑ups get <strong className="text-primary">10% off</strong> ABROB-GTpay! Use code <code className="bg-primary/15 text-primary px-2 py-0.5 rounded font-mono text-sm border border-primary/30">ABROB10</code>.
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto text-left">
               {/* Left Column: Product Image */}
@@ -188,7 +188,7 @@ const Solutions = () => {
                           <Label htmlFor="waitlist-email">Email Address *</Label>
                           {/* Discount offer banner */}
                           <p className="text-sm text-primary mb-2">
-                            🎉 First 10 sign‑ups get <strong>10% off</strong> ABROBpay! Use code <code>ABROB10</code>.
+                            🎉 First 10 sign‑ups get <strong>10% off</strong> ABROB-GTpay! Use code <code>ABROB10</code>.
                           </p>
                           <Input
                             id="waitlist-email"
