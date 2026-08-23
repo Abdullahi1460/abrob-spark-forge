@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Cpu, GraduationCap, Lightbulb, MoveUpRight, Play, Radio, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-robotics.jpg";
+const heroImage = "/assets/abrob-hero-lab.jpg";
 
 const solutions = [
   { icon: Radio, title: "Connected intelligence", copy: "IoT systems that give teams real-time visibility and control." },

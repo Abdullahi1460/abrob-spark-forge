@@ -51,7 +51,7 @@ const About = () => {
       </div>
     </div>
     <div className="rounded-lg overflow-hidden shadow-card">
-      <img alt="Technology and innovation" className="w-full h-full object-cover" src="/lovable-uploads/95a3cc17-4112-4e22-94ab-f0eedb434fb1.jpg" />
+      <img alt="Technology and innovation" className="w-full h-full object-cover" src="/assets/abrob-electronics-workbench.jpg" />
     </div>
   </div>
 </section>

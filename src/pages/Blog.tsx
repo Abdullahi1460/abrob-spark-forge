@@ -65,7 +65,7 @@ const Blog = () => {
       date: "Jan 15, 2025",
       readTime: "5 min read",
       category: "IoT",
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f"
+      image: "/assets/abrob-iot-field.jpg"
     },
     {
       title: "Prototyping vs Product Development: What's the Difference?",
@@ -73,7 +73,7 @@ const Blog = () => {
       date: "Jan 10, 2025",
       readTime: "7 min read",
       category: "Startups",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "/assets/abrob-electronics-workbench.jpg"
     },
     {
       title: "Why Kids Should Learn Robotics Early",
@@ -81,7 +81,7 @@ const Blog = () => {
       date: "Jan 5, 2025",
       readTime: "4 min read",
       category: "Education",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+      image: "/assets/abrob-steam-classroom.jpg"
     },
     {
       title: "Building Your First Arduino Robot: A Beginner's Guide",
@@ -89,7 +89,7 @@ const Blog = () => {
       date: "Dec 28, 2024",
       readTime: "10 min read",
       category: "Robotics",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+      image: "/assets/abrob-robotics-prototype.jpg"
     },
     {
       title: "The Future of Smart Cities in Nigeria",
@@ -97,7 +97,7 @@ const Blog = () => {
       date: "Dec 20, 2024",
       readTime: "6 min read",
       category: "IoT",
-      image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b"
+      image: "/assets/abrob-iot-field.jpg"
     },
     {
       title: "5 STEAM Projects Every Kid Should Try",
@@ -105,7 +105,7 @@ const Blog = () => {
       date: "Dec 15, 2024",
       readTime: "8 min read",
       category: "Education",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+      image: "/assets/abrob-steam-classroom.jpg"
     },
     {
       title: "GPS Tracking Systems: Security and Privacy Balance",
@@ -113,7 +113,7 @@ const Blog = () => {
       date: "Dec 10, 2024",
       readTime: "5 min read",
       category: "IoT",
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+      image: "/assets/abrob-iot-field.jpg"
     },
     {
       title: "From Classroom to Career: Success Stories",
@@ -121,7 +121,7 @@ const Blog = () => {
       date: "Dec 5, 2024",
       readTime: "6 min read",
       category: "Education",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+      image: "/assets/abrob-electronics-workbench.jpg"
     },
     {
       title: "Solar Energy for Robotics Projects",
@@ -129,7 +129,7 @@ const Blog = () => {
       date: "Nov 28, 2024",
       readTime: "7 min read",
       category: "Robotics",
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276"
+      image: "/assets/abrob-robotics-prototype.jpg"
     }
   ];
 

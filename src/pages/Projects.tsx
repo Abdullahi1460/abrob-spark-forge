@@ -2,7 +2,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import solarImage from "@/assets/solar-generator.jpg";
-import maximumImage from "@/assets/maximum.jpg";
+const iotFieldImage = "/assets/abrob-iot-field.jpg";
+const electronicsImage = "/assets/abrob-electronics-workbench.jpg";
+const roboticsPrototypeImage = "/assets/abrob-robotics-prototype.jpg";
+const steamImage = "/assets/abrob-steam-classroom.jpg";
 
 const Projects = () => {
   const projects = [
@@ -11,7 +14,7 @@ const Projects = () => {
       problem: "Vehicle theft and lack of real-time location monitoring in Nigeria",
       solution: "Developed a cost-effective GPS tracker with Firebase integration, real-time tracking, and SMS alerts",
       results: "Successfully deployed in 50+ vehicles with 99.9% uptime and improved security",
-      image: maximumImage,
+      image: iotFieldImage,
       tags: ["IoT", "GPS", "Firebase", "Security"]
     },
     {
@@ -19,7 +22,7 @@ const Projects = () => {
       problem: "Elderly patients forgetting to take medications on time",
       solution: "Built an IoT-powered reminder system with scheduled alerts, LCD display, and SMS notifications",
       results: "Improved medication adherence by 85% in test group of 20 users",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+      image: electronicsImage,
       tags: ["IoT", "Healthcare", "SMS", "Arduino"]
     },
     {
@@ -27,7 +30,7 @@ const Projects = () => {
       problem: "Labor-intensive lawn maintenance and high costs",
       solution: "Created an autonomous robot with obstacle detection, GPS navigation, and solar charging",
       results: "Reduced maintenance costs by 60% and improved efficiency",
-      image: "https://images.unsplash.com/photo-1563207153-f403bf289096",
+      image: roboticsPrototypeImage,
       tags: ["Robotics", "Automation", "Solar", "AI"]
     },
     {
@@ -35,7 +38,7 @@ const Projects = () => {
       problem: "Need for precise, repeatable writing and drawing for educational demos",
       solution: "Built a 3-axis CNC machine with custom G-code interpreter for automated writing and drawing",
       results: "Used in 10+ educational workshops, demonstrated precision engineering concepts",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+      image: electronicsImage,
       tags: ["CNC", "Automation", "Education", "Precision"]
     },
     {
@@ -51,7 +54,7 @@ const Projects = () => {
       problem: "Limited access to quality STEM education and hands-on learning resources",
       solution: "Developed comprehensive robotics curriculum with kits, tutorials, and project-based learning",
       results: "Trained 500+ students, 95% completion rate, multiple award-winning student projects",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789",
+      image: steamImage,
       tags: ["Education", "STEAM", "Curriculum", "Robotics"]
     }
   ];

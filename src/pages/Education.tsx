@@ -4,9 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BookOpen, Cpu, Lightbulb, Users } from "lucide-react";
-import kidsLearning from "@/assets/kids-learning.jpg";
-import studentsRobotics from "@/assets/students-robotics-1.png";
-import studentsLearning from "@/assets/students-learning.png";
+const studentsRobotics = "/assets/abrob-steam-classroom.jpg";
+const studentsLearning = "/assets/abrob-electronics-workbench.jpg";
 
 const Education = () => {
   const programs = [
