@@ -32,7 +32,7 @@ const Index = () => (
         <div className="reveal relative lg:pl-4" style={{ animationDelay: ".12s" }}>
           <div className="absolute -left-3 -top-5 z-20 hidden rounded-2xl border border-white/70 bg-white/90 p-4 shadow-xl backdrop-blur sm:block"><div className="flex items-center gap-3"><div className="rounded-xl bg-[#09bde8]/15 p-3 text-[#0879c9]"><Zap className="h-5 w-5" /></div><div><p className="text-xs font-bold uppercase tracking-wider text-slate-400">Built to move</p><p className="font-bold text-[#061b5c]">Ideas into action</p></div></div></div>
           <div className="relative overflow-hidden rounded-[2rem] bg-[#061b5c] p-2 shadow-2xl shadow-[#061b5c]/20">
-            <img src={heroImage} alt="Students working on a robotics project" className="h-[430px] w-full rounded-[1.5rem] object-cover opacity-90 sm:h-[540px]" />
+            <img src={`${heroImage}?v=20260823`} alt="Students working on a robotics project" className="h-[430px] w-full rounded-[1.5rem] object-cover opacity-90 sm:h-[540px]" />
             <div className="absolute inset-2 rounded-[1.5rem] bg-gradient-to-t from-[#061b5c]/80 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between text-white"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-[#09bde8]">ABROB LAB</p><p className="mt-2 text-2xl font-bold">Where curiosity becomes capability.</p></div><div className="rounded-full bg-white/15 p-3 backdrop-blur"><Play className="h-5 w-5 fill-white" /></div></div>
           </div>
