@@ -1,4 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import solarImage from "@/assets/solar-generator.jpg";
@@ -111,7 +112,7 @@ const Projects = () => {
                       <h3 className="font-semibold text-lg mb-2 text-secondary">Results</h3>
                       <p className="text-muted-foreground">{project.results}</p>
                     </div>
-                    <Button variant="outline" className="mt-4">View Case Study →</Button>
+                    {project.title === "ABROB-GT GPS Tracker" ? <Link to="/tracker"><Button variant="outline" className="mt-4">Explore ABROB-GT →</Button></Link> : <Button variant="outline" className="mt-4">View Case Study →</Button>}
                   </CardContent>
                 </div>
               </div>

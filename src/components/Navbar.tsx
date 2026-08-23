@@ -7,6 +7,7 @@ const navItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Solutions", path: "/solutions" },
+  { name: "ABROB-GT", path: "/tracker" },
   { name: "Education", path: "/education" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
