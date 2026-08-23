@@ -81,7 +81,7 @@ const Contact = () => {
                   <Phone className="h-5 w-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="https://wa.me/" className="text-sm text-muted-foreground hover:text-primary">
+                    <a href="https://wa.me/2347070879257" className="text-sm text-muted-foreground hover:text-primary">
                       WhatsApp / Call
                     </a>
                   </div>
