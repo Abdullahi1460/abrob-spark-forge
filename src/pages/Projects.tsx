@@ -3,6 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import solarImage from "@/assets/solar-generator.jpg";
 const iotFieldImage = "/assets/abrob-iot-field.jpg";
+const gpsTrackingImage = "/assets/abrob-gps-tracking.jpg";
+const automationFloorImage = "/assets/abrob-automation-floor.jpg";
+const solarIoTImage = "/assets/abrob-solar-iot.jpg";
 const electronicsImage = "/assets/abrob-electronics-workbench.jpg";
 const roboticsPrototypeImage = "/assets/abrob-robotics-prototype.jpg";
 const steamImage = "/assets/abrob-steam-classroom.jpg";
@@ -14,7 +17,7 @@ const Projects = () => {
       problem: "Vehicle theft and lack of real-time location monitoring in Nigeria",
       solution: "Developed a cost-effective GPS tracker with Firebase integration, real-time tracking, and SMS alerts",
       results: "Successfully deployed in 50+ vehicles with 99.9% uptime and improved security",
-      image: iotFieldImage,
+      image: gpsTrackingImage,
       tags: ["IoT", "GPS", "Firebase", "Security"]
     },
     {
@@ -30,7 +33,7 @@ const Projects = () => {
       problem: "Labor-intensive lawn maintenance and high costs",
       solution: "Created an autonomous robot with obstacle detection, GPS navigation, and solar charging",
       results: "Reduced maintenance costs by 60% and improved efficiency",
-      image: roboticsPrototypeImage,
+      image: automationFloorImage,
       tags: ["Robotics", "Automation", "Solar", "AI"]
     },
     {
@@ -46,8 +49,8 @@ const Projects = () => {
       problem: "Unreliable power supply in rural areas and need for clean energy solutions",
       solution: "Designed a portable solar generator with battery storage, multiple outputs, and power management",
       results: "Provided power to 15+ households, 100% renewable energy",
-      image: solarImage,
-      tags: ["Solar", "Clean Energy", "Battery", "Portable"]
+      image: solarIoTImage,
+      tags: ["Solar", "Clean Energy", "IoT", "Monitoring"]
     },
     {
       title: "STEAM Education Platform",
