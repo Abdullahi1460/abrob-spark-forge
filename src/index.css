@@ -57,3 +57,53 @@
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes pulse-soft { 0%, 100% { opacity: .65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
 }
+
+/* Persistent ABROB dark theme. The navigation toggle adds .dark to <html>. */
+html,
+body,
+#root {
+  transition: background-color .28s ease, color .28s ease;
+}
+
+html.dark body {
+  background: #06142d;
+  color: #e8f4ff;
+}
+
+html.dark [class~="bg-white"] {
+  background-color: #081a36 !important;
+}
+
+html.dark [class*="bg-[#f7fafc]"] {
+  background-color: #0b2343 !important;
+}
+
+html.dark [class*="text-[#061b5c]"] {
+  color: #f4fbff !important;
+}
+
+html.dark [class*="text-slate-600"],
+html.dark [class*="text-slate-700"] {
+  color: #b7cbe0 !important;
+}
+
+html.dark [class*="border-slate-200"],
+html.dark [class*="border-slate-100"] {
+  border-color: rgba(190, 222, 245, .16) !important;
+}
+
+html.dark [class*="hover:bg-slate-100"]:hover {
+  background-color: rgba(255, 255, 255, .1) !important;
+}
+
+html.dark [class*="shadow-card"] {
+  box-shadow: 0 18px 45px -28px rgba(0, 0, 0, .75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  #root {
+    transition: none;
+  }
+}
