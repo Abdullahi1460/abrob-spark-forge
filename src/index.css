@@ -150,3 +150,52 @@ html:not(.dark) [class*="border-slate-100"] {
     transition: none;
   }
 }
+
+
+/* Dark-mode contrast tokens: keep every shadcn surface and its text readable together. */
+html.dark {
+  --background: 222 55% 8%;
+  --foreground: 210 40% 98%;
+  --card: 222 42% 14%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 42% 14%;
+  --popover-foreground: 210 40% 98%;
+  --muted: 222 30% 19%;
+  --muted-foreground: 214 24% 76%;
+  --accent-foreground: 222 55% 8%;
+  --border: 215 28% 27%;
+  --input: 215 28% 27%;
+}
+
+html.dark [class~="bg-card"],
+html.dark [class~="bg-popover"] {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+}
+
+html.dark [class~="text-muted-foreground"] {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+html.dark [class~="bg-muted"] {
+  background-color: hsl(var(--muted)) !important;
+}
+
+html.dark [class~="text-foreground"] {
+  color: hsl(var(--foreground)) !important;
+}
+
+html.dark [class~="border-border"] {
+  border-color: hsl(var(--border)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark [class~="bg-card"],
+  html.dark [class~="bg-popover"],
+  html.dark [class~="text-muted-foreground"],
+  html.dark [class~="bg-muted"],
+  html.dark [class~="text-foreground"],
+  html.dark [class~="border-border"] {
+    transition: none;
+  }
+}
