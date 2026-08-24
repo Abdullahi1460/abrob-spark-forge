@@ -48,7 +48,7 @@ const Navbar = () => {
               </Link>
             ))}
             <button type="button" onClick={toggleTheme} aria-label={themeLabel} title={themeLabel} className="ml-2 rounded-full border border-slate-200 bg-white p-2.5 text-[#061b5c] transition hover:border-[#09bde8] hover:bg-[#09bde8]/10 dark:border-white/15 dark:bg-white/10 dark:text-[#63ddff] dark:hover:bg-white/15">
-              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {isDark ? <Sun className="h-4 w-4 rotate-0 transition-transform duration-300" /> : <Moon className="h-4 w-4 rotate-180 transition-transform duration-300" />}
             </button>
             <Link to="/contact" className="ml-2">
               <Button className="rounded-full bg-[#09bde8] px-5 font-bold text-[#061b5c] shadow-[0_8px_20px_-10px_#09bde8] hover:bg-[#06abd4]">Let’s talk <ArrowUpRight className="ml-1 h-4 w-4" /></Button>
@@ -57,7 +57,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 lg:hidden">
             <button type="button" onClick={toggleTheme} aria-label={themeLabel} title={themeLabel} className="rounded-lg p-2 text-[#061b5c] transition hover:bg-slate-100 dark:text-[#63ddff] dark:hover:bg-white/10">
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDark ? <Sun className="h-5 w-5 rotate-0 transition-transform duration-300" /> : <Moon className="h-5 w-5 rotate-180 transition-transform duration-300" />}
             </button>
             <button type="button" className="rounded-lg p-2 text-[#061b5c] dark:text-white" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation menu" aria-expanded={isOpen}>
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -107,3 +107,46 @@ html.dark [class*="shadow-card"] {
     transition: none;
   }
 }
+
+/* Smooth theme handoff: transition only paint properties, never layout. */
+html.dark,
+html.dark body,
+html.dark #root,
+html.dark [class~="bg-white"],
+html.dark [class*="bg-[#f7fafc]"],
+html.dark [class*="text-[#061b5c]"],
+html.dark [class*="text-slate-600"],
+html.dark [class*="text-slate-700"],
+html.dark [class*="border-slate-200"],
+html.dark [class*="border-slate-100"] {
+  transition: background-color .38s cubic-bezier(.23,1,.32,1), color .32s cubic-bezier(.23,1,.32,1), border-color .32s ease, box-shadow .38s ease;
+}
+
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) [class~="bg-white"],
+html:not(.dark) [class*="bg-[#f7fafc]"],
+html:not(.dark) [class*="text-[#061b5c]"],
+html:not(.dark) [class*="text-slate-600"],
+html:not(.dark) [class*="text-slate-700"],
+html:not(.dark) [class*="border-slate-200"],
+html:not(.dark) [class*="border-slate-100"] {
+  transition: background-color .38s cubic-bezier(.23,1,.32,1), color .32s cubic-bezier(.23,1,.32,1), border-color .32s ease, box-shadow .38s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark,
+  html.dark body,
+  html.dark #root,
+  html:not(.dark) body,
+  html:not(.dark) #root,
+  html [class~="bg-white"],
+  html [class*="bg-[#f7fafc]"],
+  html [class*="text-[#061b5c]"],
+  html [class*="text-slate-600"],
+  html [class*="text-slate-700"],
+  html [class*="border-slate-200"],
+  html [class*="border-slate-100"] {
+    transition: none;
+  }
+}
