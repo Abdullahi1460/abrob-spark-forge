@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BookOpen, Cpu, Lightbulb, Users } from "lucide-react";
-const studentsRobotics = "/assets/abrob-steam-classroom.jpg";
-const studentsLearning = "/assets/abrob-electronics-workbench.jpg";
+const studentsRobotics = "/assets/hausa-steam-classroom.jpg";
+const studentsLearning = "/assets/hausa-girls-electronics.jpg";
 
 const Education = () => {
   const programs = [
@@ -62,12 +62,12 @@ const Education = () => {
         </div>
 
         {/* Hero Images */}
-        <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
-          <div className="rounded-lg overflow-hidden shadow-card">
-            <img src={studentsRobotics} alt="Students building robotics projects" className="w-full h-80 object-cover" />
+        <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="reveal group overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow">
+            <img src={studentsRobotics} alt="Hausa students collaborating around an educational robot" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
           </div>
-          <div className="rounded-lg overflow-hidden shadow-card">
-            <img src={studentsLearning} alt="Students learning technology" className="w-full h-80 object-cover" />
+          <div className="reveal group overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow" style={{ animationDelay: "0.12s" }}>
+            <img src={studentsLearning} alt="Hausa girls learning electronics and circuit design" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
           </div>
         </div>
 

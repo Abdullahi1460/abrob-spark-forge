@@ -50,8 +50,8 @@ const About = () => {
         </div>
       </div>
     </div>
-    <div className="rounded-lg overflow-hidden shadow-card">
-      <img alt="Technology and innovation" className="w-full h-full object-cover" src="/assets/abrob-electronics-workbench.jpg" />
+    <div className="reveal group rounded-[2rem] overflow-hidden border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow" style={{ animationDelay: '0.12s' }}>
+      <img alt="Hausa women engineers collaborating on robotics and IoT innovation" className="w-full h-full min-h-[360px] object-cover transition duration-700 group-hover:scale-105" src="/assets/hausa-women-tech-team.jpg" />
     </div>
   </div>
 </section>
