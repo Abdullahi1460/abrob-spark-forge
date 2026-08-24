@@ -31,14 +31,12 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-xl dark:border-white/10 dark:bg-[#061b5c]/90">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex h-[76px] items-center justify-between">
-          <Link to="/" className="group flex items-center gap-3" onClick={() => setIsOpen(false)}>
-            <div className="h-12 w-12 overflow-hidden rounded-xl border border-slate-100 bg-white p-1 shadow-sm transition-transform group-hover:scale-105 dark:border-white/10 dark:bg-[#102b55]">
-              <img src="/logo.png" alt="ABROB INDUSTRY logo" className="h-full w-full object-contain" />
-            </div>
-            <div className="leading-none">
-              <span className="block font-poppins text-lg font-extrabold tracking-[.12em] text-[#061b5c] dark:text-white">ABROB</span>
-              <span className="mt-1 block text-[10px] font-bold tracking-[.28em] text-[#0879c9] dark:text-[#63ddff]">INDUSTRY</span>
-            </div>
+          <Link to="/" className="group flex items-center" onClick={() => setIsOpen(false)} aria-label="ABROB INDUSTRY home">
+            <img
+              src="/header-logo.png"
+              alt="ABROB INDUSTRY"
+              className="h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-105 sm:h-16 sm:w-16"
+            />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
