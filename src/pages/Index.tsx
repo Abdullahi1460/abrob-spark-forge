@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Cpu, GraduationCap, Lightbulb, MoveUpRight, Play, Radio, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const heroImage = "/assets/hausa-robotics-lab.jpg";
+const heroImage = "/assets/abrob-hero-lab.jpg";
 
 const hausaGallery = [
   ["/assets/hausa-robotics-lab.jpg", "Hausa students building a robotics prototype", "Robotics education"],
@@ -10,10 +10,13 @@ const hausaGallery = [
   ["/assets/hausa-women-tech-team.jpg", "Women engineers collaborating on a technology prototype", "Women in technology"],
   ["/assets/hausa-farmer-smart-agriculture.jpg", "Smart agriculture team monitoring connected farm sensors", "Smart agriculture"],
   ["/assets/hausa-founder-presentation.jpg", "Technology founder presenting a robotics solution", "Innovation leadership"],
+  ["/assets/abrob-robotics-prototype.jpg", "ABROB engineers testing an autonomous robotics prototype", "Applied robotics"],
   ["/assets/hausa-girls-coding.jpg", "Girls coding and testing a small wheeled robot", "Girls in coding"],
   ["/assets/hausa-school-robot-demo.jpg", "Students learning through a live robot demonstration", "Future-ready learning"],
+  ["/assets/abrob-iot-field.jpg", "Connected sensors collecting field data for smarter decisions", "IoT in the field"],
   ["/assets/hausa-smart-city-team.jpg", "Engineers installing an IoT device for connected infrastructure", "Connected cities"],
   ["/assets/hausa-girls-electronics.jpg", "Students measuring circuits at an electronics workbench", "Electronics lab"],
+  ["/assets/abrob-electronics-workbench.jpg", "A precision electronics workbench for rapid prototyping", "Engineering practice"],
 ];
 
 const solutions = [
