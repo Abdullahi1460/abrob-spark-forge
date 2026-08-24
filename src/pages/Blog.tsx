@@ -65,7 +65,7 @@ const Blog = () => {
       date: "Jan 15, 2025",
       readTime: "5 min read",
       category: "IoT",
-      image: "/assets/abrob-iot-field.jpg"
+      image: "/assets/hausa-iot-engineer.jpg"
     },
     {
       title: "Prototyping vs Product Development: What's the Difference?",
@@ -81,7 +81,7 @@ const Blog = () => {
       date: "Jan 5, 2025",
       readTime: "4 min read",
       category: "Education",
-      image: "/assets/abrob-steam-classroom.jpg"
+      image: "/assets/hausa-girls-coding.jpg"
     },
     {
       title: "Building Your First Arduino Robot: A Beginner's Guide",
@@ -97,7 +97,7 @@ const Blog = () => {
       date: "Dec 20, 2024",
       readTime: "6 min read",
       category: "IoT",
-      image: "/assets/abrob-iot-field.jpg"
+      image: "/assets/hausa-smart-city-team.jpg"
     },
     {
       title: "5 STEAM Projects Every Kid Should Try",
@@ -105,7 +105,7 @@ const Blog = () => {
       date: "Dec 15, 2024",
       readTime: "8 min read",
       category: "Education",
-      image: "/assets/abrob-steam-classroom.jpg"
+      image: "/assets/hausa-school-robot-demo.jpg"
     },
     {
       title: "GPS Tracking Systems: Security and Privacy Balance",

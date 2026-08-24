@@ -50,7 +50,7 @@ const Projects = () => {
       problem: "Unreliable power supply in rural areas and need for clean energy solutions",
       solution: "Designed a portable solar generator with battery storage, multiple outputs, and power management",
       results: "Provided power to 15+ households, 100% renewable energy",
-      image: solarIoTImage,
+      image: "/assets/hausa-farmer-smart-agriculture.jpg",
       tags: ["Solar", "Clean Energy", "IoT", "Monitoring"]
     },
     {
@@ -58,7 +58,7 @@ const Projects = () => {
       problem: "Limited access to quality STEM education and hands-on learning resources",
       solution: "Developed comprehensive robotics curriculum with kits, tutorials, and project-based learning",
       results: "Trained 500+ students, 95% completion rate, multiple award-winning student projects",
-      image: steamImage,
+      image: "/assets/hausa-school-robot-demo.jpg",
       tags: ["Education", "STEAM", "Curriculum", "Robotics"]
     }
   ];
