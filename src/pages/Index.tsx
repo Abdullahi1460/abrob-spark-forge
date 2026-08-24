@@ -31,7 +31,7 @@ const Index = () => (
   <main>
     <section className="relative overflow-hidden bg-white">
       <div className="animate-pulse-soft absolute right-0 top-0 -z-0 h-[560px] w-[560px] rounded-full bg-[#09bde8]/10 blur-3xl" />
-      <div className="container relative z-10 mx-auto grid min-h-[calc(100vh-76px)] items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:gap-20 lg:py-24">
+      <div className="container relative z-10 mx-auto grid items-center gap-10 px-4 py-12 sm:gap-14 sm:px-6 sm:py-16 lg:min-h-[calc(100vh-76px)] lg:grid-cols-[1.02fr_.98fr] lg:gap-20 lg:py-24">
         <div className="reveal max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#09bde8]/30 bg-[#09bde8]/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#0879c9]"><Sparkles className="h-4 w-4" /> Engineering a better tomorrow</div>
           <h1 className="text-5xl leading-[1.02] text-[#061b5c] sm:text-6xl lg:text-[74px]">Technology with <span className="text-[#0879c9]">purpose.</span></h1>
@@ -47,10 +47,10 @@ const Index = () => (
 
         <div className="reveal relative lg:pl-4" style={{ animationDelay: ".12s" }}>
           <div className="absolute -left-3 -top-5 z-20 hidden rounded-2xl border border-white/70 bg-white/90 p-4 shadow-xl backdrop-blur sm:block"><div className="flex items-center gap-3"><div className="rounded-xl bg-[#09bde8]/15 p-3 text-[#0879c9]"><Zap className="h-5 w-5" /></div><div><p className="text-xs font-bold uppercase tracking-wider text-slate-400">Built to move</p><p className="font-bold text-[#061b5c]">Ideas into action</p></div></div></div>
-          <div className="animate-float relative overflow-hidden rounded-[2rem] bg-[#061b5c] p-2 shadow-2xl shadow-[#061b5c]/20">
-            <img src={`${heroImage}?v=20260823`} alt="Students working on a robotics project" className="h-[430px] w-full rounded-[1.5rem] object-cover opacity-90 sm:h-[540px]" />
-            <div className="absolute inset-2 rounded-[1.5rem] bg-gradient-to-t from-[#061b5c]/80 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between text-white"><div><p className="text-sm font-bold uppercase tracking-[.2em] text-[#09bde8]">ABROB LAB</p><p className="mt-2 text-2xl font-bold">Where curiosity becomes capability.</p></div><div className="animate-pulse-soft rounded-full bg-white/15 p-3 backdrop-blur"><Play className="h-5 w-5 fill-white" /></div></div>
+          <div className="animate-float relative w-full overflow-hidden rounded-[1.5rem] bg-[#061b5c] p-1.5 shadow-2xl shadow-[#061b5c]/20 sm:rounded-[2rem] sm:p-2">
+            <img src={`${heroImage}?v=20260823`} alt="Students working on a robotics project" className="h-[300px] w-full rounded-[1.15rem] object-cover object-[58%_center] opacity-90 sm:h-[430px] sm:rounded-[1.5rem] lg:h-[540px]" />
+            <div className="absolute inset-1.5 rounded-[1.15rem] bg-gradient-to-t from-[#061b5c]/85 via-transparent to-transparent sm:inset-2 sm:rounded-[1.5rem]" />
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3 text-white sm:bottom-8 sm:left-8 sm:right-8"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#09bde8] sm:text-sm">ABROB LAB</p><p className="mt-1 text-lg font-bold leading-tight sm:mt-2 sm:text-2xl">Where curiosity becomes capability.</p></div><div className="animate-pulse-soft shrink-0 rounded-full bg-white/15 p-2.5 backdrop-blur sm:p-3"><Play className="h-4 w-4 fill-white sm:h-5 sm:w-5" /></div></div>
           </div>
         </div>
       </div>
