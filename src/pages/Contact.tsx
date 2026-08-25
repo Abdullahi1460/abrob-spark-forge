@@ -15,11 +15,13 @@ const Contact = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [inquiryType, setInquiryType] = useState("");
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setErrorMsg("");
     setSuccessMsg("");
+    const form = e.currentTarget;
+    const values = new FormData(form);
     if (!inquiryType) {
       const msg = "Please select an inquiry type.";
       setErrorMsg(msg);
@@ -28,12 +30,12 @@ const Contact = () => {
       return;
     }
     const formData = {
-      firstName: e.target.firstName?.value.trim(),
-      lastName: e.target.lastName?.value.trim(),
-      email: e.target.email?.value.trim(),
-      phone: e.target.phone?.value.trim(),
+      firstName: String(values.get("firstName") || "").trim(),
+      lastName: String(values.get("lastName") || "").trim(),
+      email: String(values.get("email") || "").trim(),
+      phone: String(values.get("phone") || "").trim(),
       inquiryType,
-      message: e.target.message?.value.trim(),
+      message: String(values.get("message") || "").trim(),
     };
     try {
       const { error } = await supabase.from("contact_submissions").insert({
@@ -181,22 +183,22 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name *</Label>
-                    <Input id="firstName" placeholder="John" required />
+                    <Input id="firstName" name="firstName" placeholder="John" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name *</Label>
-                    <Input id="lastName" placeholder="Doe" required />
+                    <Input id="lastName" name="lastName" placeholder="Doe" required />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="john@example.com" required />
+                    <Input id="email" name="email" type="email" placeholder="john@example.com" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+234 123 456 7890" />
+                    <Input id="phone" name="phone" type="tel" placeholder="+234 123 456 7890" />
                   </div>
                 </div>
 
@@ -220,8 +222,9 @@ const Contact = () => {
                 <div className="space-y-2">
                   <Label htmlFor="message">Message *</Label>
                   <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your project or inquiry..." 
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your project or inquiry..."
                     rows={6}
                     required 
                   />
