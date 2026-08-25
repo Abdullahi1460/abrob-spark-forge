@@ -7,6 +7,7 @@ type SubscribeStatus = 'idle' | 'loading' | 'success' | 'duplicate' | 'error';
 
 const Blog = () => {
   const [status, setStatus] = useState<SubscribeStatus>('idle');
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [errorMessage, setErrorMessage] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -134,6 +135,9 @@ const Blog = () => {
   ];
 
   const categories = ["All", "IoT", "Robotics", "Education", "Startups"];
+  const filteredPosts = selectedCategory === "All"
+    ? posts
+    : posts.filter((post) => post.category === selectedCategory);
 
   return (
     <div className="min-h-screen py-20">
@@ -148,28 +152,38 @@ const Blog = () => {
 
         {/* Categories */}
         <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                index === 0
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-card hover:bg-muted border border-border"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+          {categories.map((category) => {
+            const isActive = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setSelectedCategory(category)}
+                className={`min-h-11 touch-manipulation rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                  isActive
+                    ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                    : "border-border bg-card text-foreground hover:-translate-y-0.5 hover:bg-muted hover:text-foreground"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <BlogCard {...post} />
             </div>
           ))}
         </div>
+
+        {filteredPosts.length === 0 && (
+          <p className="py-12 text-center text-muted-foreground">No articles found in this category yet.</p>
+        )}
 
         {/* Load More */}
         <div className="text-center mt-12 animate-fade-in">
