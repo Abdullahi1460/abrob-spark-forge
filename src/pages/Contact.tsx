@@ -240,11 +240,32 @@ const Contact = () => {
           </Card>
         </div>
 
-        {/* Map Section */}
-        <section className="mt-20 animate-fade-in">
-          <Card className="shadow-card overflow-hidden">
-            <div className="h-96 bg-muted flex items-center justify-center">
-              <p className="text-muted-foreground">Map placeholder - Add Google Maps embed here</p>
+        {/* Location Map */}
+        <section className="mt-20 animate-fade-in" aria-labelledby="location-heading">
+          <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="mb-2 text-sm font-bold uppercase tracking-[.18em] text-primary">Visit ABROB INDUSTRY</p>
+              <h2 id="location-heading" className="text-3xl font-bold md:text-4xl">Find us at TIC Kano</h2>
+              <p className="mt-2 text-muted-foreground">Guda Abdullahi Road, Kano, Nigeria</p>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=TIC+Kano%2C+Guda+Abdullahi+Road%2C+Kano%2C+Nigeria"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md border border-primary px-5 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              Get Directions
+            </a>
+          </div>
+          <Card className="overflow-hidden shadow-card">
+            <div className="relative h-96 bg-muted">
+              <iframe
+                title="ABROB INDUSTRY location at TIC Kano, Guda Abdullahi Road"
+                src="https://www.google.com/maps?q=TIC%20Kano%2C%20Guda%20Abdullahi%20Road%2C%20Kano%2C%20Nigeria&output=embed"
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </Card>
         </section>
