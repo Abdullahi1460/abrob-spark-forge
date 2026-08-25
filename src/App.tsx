@@ -11,7 +11,9 @@ import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import Education from "./pages/Education";
 import Projects from "./pages/Projects";
+import ProjectCaseStudy from "./pages/ProjectCaseStudy";
 import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import Contact from "./pages/Contact";
 import Tracker from "./pages/Tracker";
 import NotFound from "./pages/NotFound";
@@ -33,7 +35,9 @@ const App = () => (
             <Route path="/tracker" element={<Tracker />} />
             <Route path="/education" element={<Education />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectCaseStudy />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogArticle />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

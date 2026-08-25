@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import BlogCard from "@/components/BlogCard";
+import { blogPosts } from "@/data/blogData";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
@@ -9,6 +10,7 @@ const Blog = () => {
   const [status, setStatus] = useState<SubscribeStatus>('idle');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [errorMessage, setErrorMessage] = useState('');
+  const [visibleCount, setVisibleCount] = useState(6);
   const formRef = useRef<HTMLFormElement>(null);
 
   const validateEmail = (email: string) => {
@@ -59,85 +61,11 @@ const Blog = () => {
       setErrorMessage('Something went wrong. Please try again later.');
     }
   };
-  const posts = [
-    {
-      title: "How IoT is Shaping Africa's Future",
-      excerpt: "Exploring the transformative potential of Internet of Things technology across African nations and how it's solving unique challenges.",
-      date: "Jan 15, 2025",
-      readTime: "5 min read",
-      category: "IoT",
-      image: "/assets/hausa-iot-engineer.jpg"
-    },
-    {
-      title: "Prototyping vs Product Development: What's the Difference?",
-      excerpt: "Understanding the critical distinctions between building a prototype and developing a market-ready product.",
-      date: "Jan 10, 2025",
-      readTime: "7 min read",
-      category: "Startups",
-      image: "/assets/abrob-electronics-workbench.jpg"
-    },
-    {
-      title: "Why Kids Should Learn Robotics Early",
-      excerpt: "The cognitive and practical benefits of introducing children to robotics and programming at a young age.",
-      date: "Jan 5, 2025",
-      readTime: "4 min read",
-      category: "Education",
-      image: "/assets/hausa-girls-coding.jpg"
-    },
-    {
-      title: "Building Your First Arduino Robot: A Beginner's Guide",
-      excerpt: "Step-by-step tutorial for creating a simple obstacle-avoiding robot using Arduino and ultrasonic sensors.",
-      date: "Dec 28, 2024",
-      readTime: "10 min read",
-      category: "Robotics",
-      image: "/assets/abrob-robotics-prototype.jpg"
-    },
-    {
-      title: "The Future of Smart Cities in Nigeria",
-      excerpt: "How IoT infrastructure and smart technology can transform urban planning and city management in Nigeria.",
-      date: "Dec 20, 2024",
-      readTime: "6 min read",
-      category: "IoT",
-      image: "/assets/hausa-smart-city-team.jpg"
-    },
-    {
-      title: "5 STEAM Projects Every Kid Should Try",
-      excerpt: "Hands-on project ideas that combine science, technology, engineering, arts, and math for young learners.",
-      date: "Dec 15, 2024",
-      readTime: "8 min read",
-      category: "Education",
-      image: "/assets/hausa-school-robot-demo.jpg"
-    },
-    {
-      title: "GPS Tracking Systems: Security and Privacy Balance",
-      excerpt: "Discussing the benefits and ethical considerations of real-time location tracking technology.",
-      date: "Dec 10, 2024",
-      readTime: "5 min read",
-      category: "IoT",
-      image: "/assets/abrob-iot-field.jpg"
-    },
-    {
-      title: "From Classroom to Career: Success Stories",
-      excerpt: "Inspiring stories of students who started with our robotics classes and built successful tech careers.",
-      date: "Dec 5, 2024",
-      readTime: "6 min read",
-      category: "Education",
-      image: "/assets/abrob-electronics-workbench.jpg"
-    },
-    {
-      title: "Solar Energy for Robotics Projects",
-      excerpt: "How to integrate solar panels and power management into your robotics and IoT projects for sustainability.",
-      date: "Nov 28, 2024",
-      readTime: "7 min read",
-      category: "Robotics",
-      image: "/assets/abrob-robotics-prototype.jpg"
-    }
-  ];
-
   const categories = ["All", "IoT", "Robotics", "Education", "Startups"];
   const filteredPosts = selectedCategory === "All"
-    ? posts
-    : posts.filter((post) => post.category === selectedCategory);
+    ? blogPosts
+    : blogPosts.filter((post) => post.category === selectedCategory);
+  const visiblePosts = filteredPosts.slice(0, visibleCount);
 
   return (
     <div className="min-h-screen py-20">
@@ -159,7 +87,7 @@ const Blog = () => {
                 key={category}
                 type="button"
                 aria-pressed={isActive}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => { setSelectedCategory(category); setVisibleCount(6); }}
                 className={`min-h-11 touch-manipulation rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                   isActive
                     ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/20"
@@ -174,7 +102,7 @@ const Blog = () => {
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post, index) => (
+          {visiblePosts.map((post, index) => (
             <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <BlogCard {...post} />
             </div>
@@ -187,9 +115,11 @@ const Blog = () => {
 
         {/* Load More */}
         <div className="text-center mt-12 animate-fade-in">
-          <button className="px-8 py-3 rounded-md border border-border hover:bg-muted transition-colors">
-            Load More Articles
-          </button>
+          {visibleCount < filteredPosts.length && (
+            <button type="button" onClick={() => setVisibleCount((count) => count + 3)} className="rounded-md border border-border px-8 py-3 transition-colors hover:bg-muted">
+              Load More Articles
+            </button>
+          )}
         </div>
 
         {/* Newsletter CTA */}
