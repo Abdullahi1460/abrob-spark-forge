@@ -8,30 +8,47 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Instagram } from "luci
 
 import { useState } from "react";
 import { toast } from "@/components/ui/sonner";
-import { submitContact } from "@/services/api";
+import { supabase } from "@/lib/supabase";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [inquiryType, setInquiryType] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setErrorMsg("");
     setSuccessMsg("");
+    if (!inquiryType) {
+      const msg = "Please select an inquiry type.";
+      setErrorMsg(msg);
+      toast.error(msg);
+      setLoading(false);
+      return;
+    }
     const formData = {
       firstName: e.target.firstName?.value.trim(),
       lastName: e.target.lastName?.value.trim(),
       email: e.target.email?.value.trim(),
       phone: e.target.phone?.value.trim(),
-      inquiryType: e.target.inquiryType?.value,
+      inquiryType,
       message: e.target.message?.value.trim(),
     };
     try {
-      const result = await submitContact(formData);
+      const { error } = await supabase.from("contact_submissions").insert({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || null,
+        inquiry_type: formData.inquiryType,
+        message: formData.message,
+      });
+      if (error) throw error;
       setSuccessMsg("✅ Message sent! We'll be in touch soon.");
       toast.success("Message sent successfully!");
       e.target.reset();
+      setInquiryType("");
     } catch (err) {
       const msg = err?.message || "Something went wrong.";
       setErrorMsg(msg);
@@ -185,8 +202,8 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <Label htmlFor="inquiryType">Inquiry Type *</Label>
-                  <Select>
-                    <SelectTrigger>
+                  <Select value={inquiryType} onValueChange={setInquiryType} required>
+                    <SelectTrigger id="inquiryType">
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent>
