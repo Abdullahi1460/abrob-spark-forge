@@ -24,7 +24,7 @@ const Index = () => (
       <div className="animate-pulse-soft absolute right-0 top-0 -z-0 h-[560px] w-[560px] rounded-full bg-[#09bde8]/10 blur-3xl" />
       <div className="container relative z-10 mx-auto grid items-center gap-10 px-4 py-12 sm:gap-14 sm:px-6 sm:py-16 lg:min-h-[calc(100vh-76px)] lg:grid-cols-[1.02fr_.98fr] lg:gap-20 lg:py-24">
         <div className="reveal max-w-2xl">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#09bde8]/30 bg-[#09bde8]/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#0879c9]"><Sparkles className="h-4 w-4" /> Engineering a better tomorrow</div>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#09bde8]/30 bg-[#09bde8]/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#0879c9]"><Sparkles className="h-4 w-4" /> Building Africa’s DeepTech future</div>
           <h1 className="text-5xl leading-[1.02] text-[#061b5c] sm:text-6xl lg:text-[74px]">Technology with <span className="text-[#0879c9]">purpose.</span></h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">ABROB INDUSTRY builds practical robotics, IoT and STEAM solutions that help people, organisations and communities move forward.</p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
