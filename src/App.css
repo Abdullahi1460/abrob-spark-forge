@@ -1,0 +1,5 @@
+#root { min-height: 100vh; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+button { transition: transform .16s cubic-bezier(.23,1,.32,1), box-shadow .2s ease, background-color .2s ease; }
+button:active { transform: scale(.97); }

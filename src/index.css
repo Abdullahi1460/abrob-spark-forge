@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 60% 12%;
+    --card: 210 33% 98%;
+    --card-foreground: 222 60% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 60% 12%;
+    --primary: 194 92% 48%;
+    --primary-foreground: 222 80% 12%;
+    --secondary: 224 78% 31%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 25% 96%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 194 92% 48%;
+    --accent-foreground: 222 80% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 24% 88%;
+    --input: 214 24% 88%;
+    --ring: 194 92% 48%;
+    --radius: 0.9rem;
+    --navy: #061b5c;
+    --cyan: #09bde8;
+    --gradient-primary: linear-gradient(135deg, #09bde8 0%, #0879c9 100%);
+    --gradient-hero: linear-gradient(135deg, #061b5c 0%, #0a367e 54%, #09bde8 160%);
+    --shadow-card: 0 18px 45px -28px rgba(6, 27, 92, .42);
+    --shadow-glow: 0 14px 42px -20px rgba(9, 189, 232, .62);
+  }
+
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-inter antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-poppins font-bold tracking-tight; }
+  ::selection { background: #09bde8; color: #061b5c; }
+}
+
+@layer utilities {
+  .gradient-primary { background-image: var(--gradient-primary); }
+  .gradient-hero { background-image: var(--gradient-hero); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .text-navy { color: var(--navy); }
+  .bg-navy { background-color: var(--navy); }
+  .grid-pattern { background-image: linear-gradient(rgba(9,189,232,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(9,189,232,.08) 1px, transparent 1px); background-size: 34px 34px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: reveal .7s cubic-bezier(.23,1,.32,1) both; }
+  .animate-float { animation: float 5s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulse-soft 2.8s ease-in-out infinite; }
+  @keyframes reveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes pulse-soft { 0%, 100% { opacity: .65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+}
+
+/* Persistent ABROB dark theme. The navigation toggle adds .dark to <html>. */
+html,
+body,
+#root {
+  transition: background-color .28s ease, color .28s ease;
+}
+
+html.dark body {
+  background: #06142d;
+  color: #e8f4ff;
+}
+
+html.dark [class~="bg-white"] {
+  background-color: #081a36 !important;
+}
+
+html.dark [class*="bg-[#f7fafc]"] {
+  background-color: #0b2343 !important;
+}
+
+html.dark [class*="text-[#061b5c]"] {
+  color: #f4fbff !important;
+}
+
+html.dark [class*="text-slate-600"],
+html.dark [class*="text-slate-700"] {
+  color: #b7cbe0 !important;
+}
+
+html.dark [class*="border-slate-200"],
+html.dark [class*="border-slate-100"] {
+  border-color: rgba(190, 222, 245, .16) !important;
+}
+
+html.dark [class*="hover:bg-slate-100"]:hover {
+  background-color: rgba(255, 255, 255, .1) !important;
+}
+
+html.dark [class*="shadow-card"] {
+  box-shadow: 0 18px 45px -28px rgba(0, 0, 0, .75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  #root {
+    transition: none;
+  }
+}
+
+/* Smooth theme handoff: transition only paint properties, never layout. */
+html.dark,
+html.dark body,
+html.dark #root,
+html.dark [class~="bg-white"],
+html.dark [class*="bg-[#f7fafc]"],
+html.dark [class*="text-[#061b5c]"],
+html.dark [class*="text-slate-600"],
+html.dark [class*="text-slate-700"],
+html.dark [class*="border-slate-200"],
+html.dark [class*="border-slate-100"] {
+  transition: background-color .38s cubic-bezier(.23,1,.32,1), color .32s cubic-bezier(.23,1,.32,1), border-color .32s ease, box-shadow .38s ease;
+}
+
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) [class~="bg-white"],
+html:not(.dark) [class*="bg-[#f7fafc]"],
+html:not(.dark) [class*="text-[#061b5c]"],
+html:not(.dark) [class*="text-slate-600"],
+html:not(.dark) [class*="text-slate-700"],
+html:not(.dark) [class*="border-slate-200"],
+html:not(.dark) [class*="border-slate-100"] {
+  transition: background-color .38s cubic-bezier(.23,1,.32,1), color .32s cubic-bezier(.23,1,.32,1), border-color .32s ease, box-shadow .38s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark,
+  html.dark body,
+  html.dark #root,
+  html:not(.dark) body,
+  html:not(.dark) #root,
+  html [class~="bg-white"],
+  html [class*="bg-[#f7fafc]"],
+  html [class*="text-[#061b5c]"],
+  html [class*="text-slate-600"],
+  html [class*="text-slate-700"],
+  html [class*="border-slate-200"],
+  html [class*="border-slate-100"] {
+    transition: none;
+  }
+}
+
+
+/* Dark-mode contrast tokens: keep every shadcn surface and its text readable together. */
+html.dark {
+  --background: 222 55% 8%;
+  --foreground: 210 40% 98%;
+  --card: 222 42% 14%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 42% 14%;
+  --popover-foreground: 210 40% 98%;
+  --muted: 222 30% 19%;
+  --muted-foreground: 214 24% 76%;
+  --accent-foreground: 222 55% 8%;
+  --border: 215 28% 27%;
+  --input: 215 28% 27%;
+}
+
+html.dark [class~="bg-card"],
+html.dark [class~="bg-popover"] {
+  background-color: hsl(var(--card)) !important;
+  color: hsl(var(--card-foreground)) !important;
+}
+
+html.dark [class~="text-muted-foreground"] {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+html.dark [class~="bg-muted"] {
+  background-color: hsl(var(--muted)) !important;
+}
+
+html.dark [class~="text-foreground"] {
+  color: hsl(var(--foreground)) !important;
+}
+
+html.dark [class~="border-border"] {
+  border-color: hsl(var(--border)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.dark [class~="bg-card"],
+  html.dark [class~="bg-popover"],
+  html.dark [class~="text-muted-foreground"],
+  html.dark [class~="bg-muted"],
+  html.dark [class~="text-foreground"],
+  html.dark [class~="border-border"] {
+    transition: none;
+  }
+}
