@@ -35,6 +35,10 @@ const Navbar = () => {
             <img
               src="/header-logo.png"
               alt="ABROB INDUSTRY"
+              width={64}
+              height={64}
+              fetchPriority="high"
+              decoding="async"
               className="h-14 w-14 object-contain transition-transform duration-200 group-hover:scale-105 sm:h-16 sm:w-16"
             />
           </Link>

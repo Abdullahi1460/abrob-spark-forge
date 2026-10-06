@@ -64,10 +64,10 @@ const Education = () => {
         {/* Hero Images */}
         <div className="mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="reveal group overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow">
-            <img src={studentsRobotics} alt="ABROB learners collaborating during a hands-on technology workshop" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={studentsRobotics} alt="ABROB learners collaborating during a hands-on technology workshop" loading="lazy" decoding="async" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
           </div>
           <div className="reveal group overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow" style={{ animationDelay: "0.12s" }}>
-            <img src={studentsLearning} alt="Young learners building electronics with an ABROB instructor" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={studentsLearning} alt="Young learners building electronics with an ABROB instructor" loading="lazy" decoding="async" className="h-80 w-full object-cover transition duration-700 group-hover:scale-105" />
           </div>
         </div>
 

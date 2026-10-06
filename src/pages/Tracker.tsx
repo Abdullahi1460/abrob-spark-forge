@@ -94,7 +94,7 @@ const Tracker = () => (
           <div className="relative">
             <div className="absolute -left-5 top-8 z-10 hidden rounded-2xl border border-white/80 bg-white/95 p-4 shadow-xl sm:block"><div className="flex items-center gap-3"><div className="rounded-xl bg-[#09bde8]/15 p-3 text-[#0879c9]"><LockKeyhole className="h-5 w-5" /></div><div><p className="text-xs font-bold uppercase tracking-wider text-slate-400">ABROB-GT</p><p className="font-bold text-[#061b5c]">Security in motion</p></div></div></div>
             <div className="animate-float overflow-hidden rounded-[2rem] bg-[#061b5c] p-2 shadow-2xl shadow-[#061b5c]/20">
-              <img src={trackerPresentationImage} alt="ABROB founder presenting the ABROB-GT tracker" className="h-[420px] w-full rounded-[1.5rem] object-cover sm:h-[540px]" />
+              <img src={trackerPresentationImage} alt="ABROB founder presenting the ABROB-GT tracker" loading="lazy" decoding="async" className="h-[420px] w-full rounded-[1.5rem] object-cover sm:h-[540px]" />
               <div className="absolute inset-2 rounded-[1.5rem] bg-gradient-to-t from-[#061b5c]/80 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 text-white"><p className="text-sm font-bold uppercase tracking-[.2em] text-[#09bde8]">TRACK. ALERT. RESPOND.</p><p className="mt-2 max-w-md text-2xl font-bold">A clearer view of every journey.</p></div>
             </div>

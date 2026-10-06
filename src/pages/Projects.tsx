@@ -20,7 +20,7 @@ const Projects = () => {
             <Card key={project.slug} className="overflow-hidden shadow-card transition-all animate-fade-in hover:shadow-glow" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div className="overflow-hidden">
-                  <img src={project.image} alt={project.title} className="h-full min-h-64 w-full object-cover transition-transform duration-300 hover:scale-105" />
+                  <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="h-full min-h-64 w-full object-cover transition-transform duration-300 hover:scale-105" />
                 </div>
                 <div className="flex flex-col justify-center p-6 md:p-8">
                   <CardHeader className="mb-4 p-0">

@@ -44,7 +44,7 @@ const ProjectCaseStudy = () => {
                 </div>
               </div>
               <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-glow animate-fade-in">
-                <img src={project.image} alt={project.title} className="aspect-[4/3] w-full object-cover" />
+                <img src={project.image} alt={project.title} decoding="async" fetchPriority="high" className="aspect-[4/3] w-full object-cover" />
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const ProjectCaseStudy = () => {
               <p className="mt-4 leading-relaxed text-muted-foreground">A closer look at the people, prototypes, and environments that inform this work.</p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
-              {project.gallery.map((item) => <figure key={item.src} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><div className="overflow-hidden"><img src={item.src} alt={item.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" /></div><figcaption className="p-4"><p className="text-xs font-bold uppercase tracking-[.14em] text-primary">{item.label}</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.alt}</p></figcaption></figure>)}
+              {project.gallery.map((item) => <figure key={item.src} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm"><div className="overflow-hidden"><img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" /></div><figcaption className="p-4"><p className="text-xs font-bold uppercase tracking-[.14em] text-primary">{item.label}</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.alt}</p></figcaption></figure>)}
             </div>
           </section>
 

@@ -1,6 +1,6 @@
 import SEO from "@/components/SEO";
 import { HardDrive, Cpu, Brain, BookOpen, Target, Eye, Award, Users, Linkedin, Twitter, Github } from "lucide-react";
-import roboticsVehicleImage from "@/assets/abrob-robotics-vehicle.png";
+import roboticsVehicleImage from "@/assets/abrob-robotics-vehicle.jpg";
 import ahmedSalisuAhmedImage from "@/assets/Ahmed Salisu Ahmed.jpg";
 
 const About = () => {
@@ -53,7 +53,7 @@ const About = () => {
       </div>
     </div>
     <div className="reveal group min-h-[360px] overflow-hidden rounded-[2rem] border border-border bg-card shadow-card transition-all duration-500 hover:-translate-y-2 hover:shadow-glow md:min-h-0" style={{ animationDelay: '0.12s' }}>
-      <img alt="ABROB robotics and IoT vehicle prototype" className="block h-full w-full object-cover transition duration-700 group-hover:scale-105" src={roboticsVehicleImage} />
+      <img alt="ABROB robotics and IoT vehicle prototype" className="block h-full w-full object-cover transition duration-700 group-hover:scale-105" src={roboticsVehicleImage} decoding="async" fetchPriority="high" />
     </div>
   </div>
 </section>
@@ -149,7 +149,7 @@ const About = () => {
               >
                 {member.image ? (
                   <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-2 border-border shadow-inner transition-transform duration-300 group-hover:scale-105">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    <img src={member.image} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                   </div>
                 ) : (
                   <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-primary-foreground text-2xl font-bold font-poppins mx-auto mb-4 border-2 border-border shadow-inner transition-transform duration-300 group-hover:scale-105">
